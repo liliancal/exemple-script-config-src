@@ -44,4 +44,5 @@ composer install
 chown -R www-data:www-data /var/www/html/
 source .env.dev
 
-echo "Penser à taper la commander certbot --apache"
+echo "Configuration SSL / HTTPS"
+certbot --apache -d helene.piscine.miicom.fr --redirect
