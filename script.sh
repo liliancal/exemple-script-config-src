@@ -38,6 +38,7 @@ then
 fi
 
 echo "Pull sources git"
+cd /var/www/html
 git pull origin master
 composer install
 chown -R www-data:www-data /var/www/html/
