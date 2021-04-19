@@ -18,9 +18,14 @@ then
   ln -s /snap/bin/certbot /usr/bin/certbot
 fi
 
+APACHE_CHECK=$(ls /etc/apache2/sites-available/ | grep 000-default.conf)
+if [ -z "$APACHE_CHECK" ]
+then
+	touch /etc/apache2/sites-available/000-default.conf
+fi
+
 MD5_DEST=$(md5sum /etc/apache2/sites-available/000-default.conf | awk '{print $1}')
 MD5_SRC=$(md5sum 000-default.conf | awk '{print $1}')
-
 if [ "$MD5_DEST" != "$MD5_SRC" ]
 then
 	echo "On écrase la conf apache"
