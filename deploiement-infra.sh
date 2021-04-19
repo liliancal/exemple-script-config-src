@@ -3,7 +3,7 @@
 echo "Installation paquets APT"
 apt update
 apt install -y mariadb-server mariadb-client
-apt install -y php apache2 libapache2-mod-php php-mysql php-xml
+apt install -y php7.2 php7.2-xml libapache2-mod-php7.2 php7.2-mysql apache2 
 apt install -y composer vim git snapd
 
 echo "Config snapd + certbot"
